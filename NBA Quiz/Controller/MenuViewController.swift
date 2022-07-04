@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     }
 
     @IBAction func playButtonPressed(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "goToQuestions", sender: self)
         
     }
     
