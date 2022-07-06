@@ -28,6 +28,7 @@ class QuestionsViewController: UIViewController {
         configureMainMenu()
         quizBrain.getRandomQuestion(counter: questionCounter)
         updateQuestionsUI()
+        allQuestions()
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
@@ -85,6 +86,12 @@ class QuestionsViewController: UIViewController {
         option4Button.setTitle(quizBrain.getOption4(), for: .normal)
         navigationItem.setHidesBackButton(true, animated: false)
 
+    }
+    
+    func allQuestions() {
+        for num in 0...K.questionsList.count - 1 {
+            print(K.questionsList[num].question)
+        }
     }
     
 

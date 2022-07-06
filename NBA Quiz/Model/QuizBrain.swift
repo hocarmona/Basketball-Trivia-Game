@@ -20,11 +20,13 @@ struct QuizBrain {
             getRandomQuestion(counter: counter)
         } else {
             arrayIndexUsed.append(newIndexNum)
+            currentQuestion = newIndexNum
+            print(newIndexNum)
+            print(arrayIndexUsed)
             if counter >= 10 {
                 arrayIndexUsed = []
             }
         }
-        currentQuestion = newIndexNum
     }
         
     func getQuestion() -> String {
