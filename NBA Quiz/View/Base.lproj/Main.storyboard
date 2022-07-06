@@ -62,8 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="questionsBG" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-OQ-glw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionsBG" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-OQ-glw">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="896"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-O2-att">
                                 <rect key="frame" x="40" y="108" width="270" height="4"/>
@@ -71,12 +71,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0T-Pl-3NL">
                                 <rect key="frame" x="20" y="142" width="310" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-ey-V52" userLabel="Option1Button">
                                 <rect key="frame" x="50" y="382" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1x7-ti-Rku"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="RDw-qN-eE4"/>
@@ -94,7 +94,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-Ac-pdH" userLabel="Option2Button">
                                 <rect key="frame" x="50" y="462" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IsP-Cz-CKq"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="R2W-TB-JSK"/>
@@ -114,7 +114,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-KS-Y7d" userLabel="Option3Button">
                                 <rect key="frame" x="50" y="542" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3tz-KQ-Hka"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="GZv-4h-gAi"/>
@@ -136,7 +136,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvW-So-5N5">
                                 <rect key="frame" x="125" y="777" width="100" height="35"/>
-                                <color key="backgroundColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="LWM-kV-UaT"/>
                                 </constraints>
@@ -160,7 +160,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYg-gO-NM7" userLabel="Option4Button">
                                 <rect key="frame" x="50" y="622" width="250" height="50"/>
-                                <color key="backgroundColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Ftl-UE-vW3"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="OvJ-GC-ctX"/>
@@ -260,6 +260,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
