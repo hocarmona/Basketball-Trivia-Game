@@ -17,25 +17,31 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var option4Button: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var questionCounterLabel: UILabel!
+    
     
     var questionCounter: Int = 1
     var quizBrain = QuizBrain(currentQuestion: 0)
     let numOfQuestions = 10
-    
+    var progress: Float {
+        return Float(questionCounter) / Float(numOfQuestions)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMainMenu()
         quizBrain.getRandomQuestion(counter: questionCounter)
         updateQuestionsUI()
-        allQuestions()
     }
     
+    //MARK: - UI actions
+    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
+        enableOptionButtons(enable: false)
         let check = quizBrain.checkAnswer(answer: sender.currentTitle!)
-        resultLabel.isHidden = false
         if check {
-            sender.backgroundColor = .green
+            sender.backgroundColor = .systemGreen
             resultLabel.text = "Correct Answer"
             resultLabel.textColor = .green
         } else {
@@ -43,25 +49,25 @@ class QuestionsViewController: UIViewController {
             resultLabel.text = "Incorrect Answer"
             resultLabel.textColor = .red
         }
-        nextButton.isEnabled = true
         
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        enableOptionButtons(enable: true)
         quizBrain.getRandomQuestion(counter: questionCounter)
         updateQuestionsUI()
-        resultLabel.isHidden = true
-        nextButton.isEnabled = false
         if questionCounter >= numOfQuestions {
             print("Finish congrats")
             questionCounter = 1
         } else {
             questionCounter += 1
         }
+        progressBar.progress = progress
+        questionCounterLabel.text = "\(questionCounter)/10"
     }
     
     
-    //MARK: - Configure UI Elements
+    //MARK: - UI elements modifications
     
     func configureMainMenu() {
         option1Button.layer.cornerRadius = 25
@@ -69,9 +75,10 @@ class QuestionsViewController: UIViewController {
         option3Button.layer.cornerRadius = 25
         option4Button.layer.cornerRadius = 25
         nextButton.layer.cornerRadius = 15
-        resultLabel.isHidden = true
-        nextButton.isEnabled = false
+        enableOptionButtons(enable: true)
         questionCounter = 1
+        progressBar.progress = progress
+        questionCounterLabel.text = "\(questionCounter)/10"
     }
     
     func updateQuestionsUI() {
@@ -87,11 +94,15 @@ class QuestionsViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: false)
 
     }
-    
-    func allQuestions() {
-        for num in 0...K.questionsList.count - 1 {
-            print(K.questionsList[num].question)
-        }
+        
+    func enableOptionButtons(enable: Bool) {
+        option1Button.isUserInteractionEnabled = enable
+        option2Button.isUserInteractionEnabled = enable
+        option3Button.isUserInteractionEnabled = enable
+        option4Button.isUserInteractionEnabled = enable
+        nextButton.isUserInteractionEnabled = !enable
+        nextButton.alpha = enable ? 0.5 : 1.0
+        resultLabel.isHidden = enable
     }
     
 

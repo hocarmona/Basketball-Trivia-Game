@@ -63,17 +63,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionsBG" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-OQ-glw">
-                                <rect key="frame" x="0.0" y="0.0" width="350" height="896"/>
+                                <rect key="frame" x="0.0" y="-64" width="350" height="960"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-O2-att">
                                 <rect key="frame" x="40" y="108" width="270" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0T-Pl-3NL">
-                                <rect key="frame" x="20" y="142" width="310" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-ey-V52" userLabel="Option1Button">
                                 <rect key="frame" x="50" y="382" width="250" height="50"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -182,18 +176,31 @@
                                     <action selector="answerButtonPressed:" destination="LPz-8T-Ycb" eventType="touchUpInside" id="0ab-ba-YvW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vH9-IQ-dTy">
+                                <rect key="frame" x="120" y="132" width="110" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0T-Pl-3NL">
+                                <rect key="frame" x="20" y="179.5" width="310" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HDo-jG-0YE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xBO-KS-Y7d" firstAttribute="top" secondItem="xMK-Ac-pdH" secondAttribute="bottom" constant="30" id="20D-Y9-raX"/>
+                            <constraint firstItem="HDo-jG-0YE" firstAttribute="trailing" secondItem="vH9-IQ-dTy" secondAttribute="trailing" constant="120" id="8Vh-IZ-iVm"/>
                             <constraint firstItem="HDo-jG-0YE" firstAttribute="bottom" secondItem="tvW-So-5N5" secondAttribute="bottom" constant="50" id="8fx-qw-Umc"/>
                             <constraint firstItem="HDo-jG-0YE" firstAttribute="trailing" secondItem="xBO-KS-Y7d" secondAttribute="trailing" constant="50" id="Abb-TU-KlT"/>
                             <constraint firstItem="xMK-Ac-pdH" firstAttribute="top" secondItem="Xt9-ey-V52" secondAttribute="bottom" constant="30" id="D8b-bg-K5v"/>
-                            <constraint firstItem="M0T-Pl-3NL" firstAttribute="top" secondItem="ezg-O2-att" secondAttribute="bottom" constant="30" id="Df2-Bl-V5P"/>
                             <constraint firstItem="UUb-K2-KKl" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="120" id="E1g-ff-PjD"/>
-                            <constraint firstItem="P6f-OQ-glw" firstAttribute="top" secondItem="Fzs-gk-ITF" secondAttribute="top" id="Gwk-lZ-JQH"/>
+                            <constraint firstItem="vH9-IQ-dTy" firstAttribute="top" secondItem="ezg-O2-att" secondAttribute="bottom" constant="20" id="J5O-Oz-0W3"/>
                             <constraint firstItem="Xt9-ey-V52" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="50" id="Kcz-Dy-XaM"/>
+                            <constraint firstItem="vH9-IQ-dTy" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="120" id="MkB-on-0Dm"/>
                             <constraint firstItem="HDo-jG-0YE" firstAttribute="trailing" secondItem="tvW-So-5N5" secondAttribute="trailing" constant="125" id="NNi-ZJ-QRW"/>
                             <constraint firstItem="P6f-OQ-glw" firstAttribute="trailing" secondItem="HDo-jG-0YE" secondAttribute="trailing" id="OK0-t1-gwz"/>
                             <constraint firstItem="xBO-KS-Y7d" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="50" id="Sod-QH-cwi"/>
@@ -206,6 +213,7 @@
                             <constraint firstItem="HDo-jG-0YE" firstAttribute="trailing" secondItem="NYg-gO-NM7" secondAttribute="trailing" constant="50" id="aRm-28-QTZ"/>
                             <constraint firstItem="ezg-O2-att" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="40" id="bNO-ru-rFj"/>
                             <constraint firstItem="NYg-gO-NM7" firstAttribute="leading" secondItem="HDo-jG-0YE" secondAttribute="leading" constant="50" id="eC1-Pc-h8y"/>
+                            <constraint firstItem="M0T-Pl-3NL" firstAttribute="top" secondItem="vH9-IQ-dTy" secondAttribute="bottom" constant="20" id="gMs-zb-FYr"/>
                             <constraint firstItem="HDo-jG-0YE" firstAttribute="trailing" secondItem="xMK-Ac-pdH" secondAttribute="trailing" constant="50" id="i9p-jH-o2G"/>
                             <constraint firstAttribute="bottom" secondItem="P6f-OQ-glw" secondAttribute="bottom" id="ihz-bm-l4y"/>
                             <constraint firstItem="UUb-K2-KKl" firstAttribute="top" secondItem="NYg-gO-NM7" secondAttribute="bottom" constant="40" id="phg-BO-hgk"/>
@@ -223,7 +231,9 @@
                         <outlet property="option2Button" destination="xMK-Ac-pdH" id="R9U-76-DoW"/>
                         <outlet property="option3Button" destination="xBO-KS-Y7d" id="szf-A2-tqy"/>
                         <outlet property="option4Button" destination="NYg-gO-NM7" id="ZsP-Tv-5aa"/>
+                        <outlet property="progressBar" destination="ezg-O2-att" id="gaZ-WY-R3U"/>
                         <outlet property="progressQuestions" destination="ezg-O2-att" id="kvZ-QE-Qer"/>
+                        <outlet property="questionCounterLabel" destination="vH9-IQ-dTy" id="HZ7-Mz-eA4"/>
                         <outlet property="questionLabel" destination="M0T-Pl-3NL" id="Lea-sr-VeG"/>
                         <outlet property="resultLabel" destination="UUb-K2-KKl" id="JeS-cg-O1t"/>
                     </connections>
