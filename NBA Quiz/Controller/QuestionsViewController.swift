@@ -28,12 +28,14 @@ class QuestionsViewController: UIViewController {
         return Float(questionCounter) / Float(numOfQuestions)
     }
     var enableSegue: Bool = false
+    var correctAnswers: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureMainMenu()
         quizBrain.getRandomQuestion(counter: questionCounter)
         updateQuestionsUI()
+        correctAnswers = 0
     }
     
     //MARK: - UI actions
@@ -45,6 +47,7 @@ class QuestionsViewController: UIViewController {
             sender.backgroundColor = .systemGreen
             resultLabel.text = "Correct Answer"
             resultLabel.textColor = .green
+            correctAnswers += 1
         } else {
             sender.backgroundColor = .red
             resultLabel.text = "Incorrect Answer"
@@ -113,6 +116,14 @@ class QuestionsViewController: UIViewController {
         nextButton.isUserInteractionEnabled = !enable
         nextButton.alpha = enable ? 0.5 : 1.0
         resultLabel.isHidden = enable
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.goToResult {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.correctAnswers = correctAnswers
+            destinationVC.totalOfQuestions = numOfQuestions
+        }
     }
     
 

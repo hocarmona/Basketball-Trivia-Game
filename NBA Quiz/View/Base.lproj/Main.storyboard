@@ -62,8 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionsBG" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-OQ-glw">
-                                <rect key="frame" x="0.0" y="-118" width="350" height="960"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="questionsBG" translatesAutoresizingMaskIntoConstraints="NO" id="P6f-OQ-glw">
+                                <rect key="frame" x="0.0" y="-118" width="414" height="960"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ezg-O2-att">
                                 <rect key="frame" x="40" y="64" width="270" height="4"/>
@@ -269,22 +269,47 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="O0L-3G-PBY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxu-e8-qbV">
+                                <rect key="frame" x="100" y="144" width="214" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eLS-p1-DP0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" red="0.94509804249999996" green="0.82352948189999997" blue="0.27843138579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3w-bl-KH9">
+                                <rect key="frame" x="75" y="224" width="264" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="atW-bq-3th"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zfM-VH-7PR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sa7-UC-ww3" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" constant="125" id="03t-e9-cBD"/>
+                            <constraint firstItem="oxu-e8-qbV" firstAttribute="top" secondItem="zfM-VH-7PR" secondAttribute="top" constant="100" id="AAV-2P-YOk"/>
                             <constraint firstItem="jzg-Pk-89e" firstAttribute="top" secondItem="8gb-bm-VgS" secondAttribute="top" id="BTp-2k-jt1"/>
                             <constraint firstAttribute="bottom" secondItem="jzg-Pk-89e" secondAttribute="bottom" id="Cde-t4-3N2"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="jzg-Pk-89e" secondAttribute="trailing" id="HPV-iM-fXS"/>
+                            <constraint firstItem="D3w-bl-KH9" firstAttribute="top" secondItem="oxu-e8-qbV" secondAttribute="bottom" constant="30" id="LK2-9N-MlT"/>
+                            <constraint firstItem="oxu-e8-qbV" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" constant="100" id="Ogs-Hf-Num"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="sa7-UC-ww3" secondAttribute="trailing" constant="125" id="WxP-Ug-wTA"/>
+                            <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="D3w-bl-KH9" secondAttribute="trailing" constant="75" id="fRD-he-f4y"/>
+                            <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="oxu-e8-qbV" secondAttribute="trailing" constant="100" id="mix-7H-ryi"/>
                             <constraint firstItem="jzg-Pk-89e" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" id="nCT-Ah-g5L"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="bottom" secondItem="sa7-UC-ww3" secondAttribute="bottom" constant="50" id="s6s-TT-1W6"/>
+                            <constraint firstItem="D3w-bl-KH9" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" constant="75" id="tXY-27-oeK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JNI-1F-JlE"/>
                     <connections>
                         <outlet property="menuButton" destination="sa7-UC-ww3" id="w8I-rX-JWC"/>
+                        <outlet property="scoreNumberLabel" destination="oxu-e8-qbV" id="ugS-Bh-qxb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf3-43-cxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
