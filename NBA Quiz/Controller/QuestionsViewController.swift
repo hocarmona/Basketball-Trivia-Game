@@ -79,6 +79,7 @@ class QuestionsViewController: UIViewController {
     //MARK: - UI elements modifications
     
     func configureMainMenu() {
+        navigationItem.setHidesBackButton(true, animated: false)
         option1Button.layer.cornerRadius = 25
         option2Button.layer.cornerRadius = 25
         option3Button.layer.cornerRadius = 25
@@ -101,7 +102,6 @@ class QuestionsViewController: UIViewController {
         option2Button.setTitle(quizBrain.getOption2(), for: .normal)
         option3Button.setTitle(quizBrain.getOption3(), for: .normal)
         option4Button.setTitle(quizBrain.getOption4(), for: .normal)
-        navigationItem.setHidesBackButton(true, animated: false)
 
     }
         

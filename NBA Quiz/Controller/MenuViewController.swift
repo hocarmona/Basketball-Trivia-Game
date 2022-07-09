@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: false)
         playButton.layer.cornerRadius = 25
     }
 
