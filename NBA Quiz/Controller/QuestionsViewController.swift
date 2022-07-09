@@ -27,6 +27,7 @@ class QuestionsViewController: UIViewController {
     var progress: Float {
         return Float(questionCounter) / Float(numOfQuestions)
     }
+    var enableSegue: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,10 @@ class QuestionsViewController: UIViewController {
     }
     
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        if enableSegue {
+            configureMainMenu()
+            self.performSegue(withIdentifier: K.goToResult, sender: self)
+        }
         enableOptionButtons(enable: true)
         quizBrain.getRandomQuestion(counter: questionCounter)
         updateQuestionsUI()
@@ -64,6 +69,10 @@ class QuestionsViewController: UIViewController {
         }
         progressBar.progress = progress
         questionCounterLabel.text = "\(questionCounter)/10"
+        if questionCounter == 10 {
+            nextButton.setTitle("See result", for: .normal)
+            enableSegue = true
+        }
     }
     
     
@@ -75,6 +84,7 @@ class QuestionsViewController: UIViewController {
         option3Button.layer.cornerRadius = 25
         option4Button.layer.cornerRadius = 25
         nextButton.layer.cornerRadius = 15
+        nextButton.setTitle("Next", for: .normal)
         enableOptionButtons(enable: true)
         questionCounter = 1
         progressBar.progress = progress

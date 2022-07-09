@@ -236,11 +236,28 @@
                         <outlet property="questionCounterLabel" destination="vH9-IQ-dTy" id="HZ7-Mz-eA4"/>
                         <outlet property="questionLabel" destination="M0T-Pl-3NL" id="Lea-sr-VeG"/>
                         <outlet property="resultLabel" destination="UUb-K2-KKl" id="JeS-cg-O1t"/>
+                        <segue destination="7iP-dh-AdW" kind="show" identifier="goToResult" id="wcL-gl-bm8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoT-p1-d3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1847.826086956522" y="62.946428571428569"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="4oc-zd-bF2">
+            <objects>
+                <viewController id="7iP-dh-AdW" customClass="ResultViewController" customModule="NBA_Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8gb-bm-VgS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0eA-BH-kRB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JNI-1F-JlE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gf3-43-cxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2675" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k8I-3b-Cj3">

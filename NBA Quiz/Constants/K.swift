@@ -11,6 +11,8 @@ import Foundation
 
 struct K {
     
+    //Answers
+    
     static let stephenCurry = "Stephen Curry"
     static let billRussell = "Bill Russell"
     static let wiltChamberlain = "Wilt Chamberlain"
@@ -22,7 +24,11 @@ struct K {
     static let rangers = "Rangers"
     static let klayThompson = "Klay Thompson"
     static let dirkNowitzki = "Dirk Nowitzki"
+    static let miamiHeat = "Miami Heat"
+    static let kobeBryantPoints = "60"
     
+    
+    // Questions
     
     static let questionsList = [
         QuestionsModel(q: "Player with most history 3 Pointers made", o: ["Lebron James", stephenCurry, "Michael Jordan", "Ray Allen"], a: stephenCurry),
@@ -35,8 +41,16 @@ struct K {
         QuestionsModel(q: "Only No-USA team", o: ["Timberwolves", raptors, "Pelicans", "Grizzlies"], a: raptors),
         QuestionsModel(q: "Which was not a NBA team", o: ["The original Bullets", rangers, "Supersonics", "Olympians"], a: rangers),
         QuestionsModel(q: "Player with highest score single quarter", o: ["Kobe Bryant", "Allen Iverson", "Wilt Chamberlain", klayThompson], a: klayThompson),
-        QuestionsModel(q: "European NBA player with most all-time points", o: [dirkNowitzki, "Pau Gasol", "Tony Parker", "Giannis", "Giannis Antetokounmpo"], a: dirkNowitzki)
+        QuestionsModel(q: "European NBA player with most all-time points", o: [dirkNowitzki, "Pau Gasol", "Tony Parker", "Giannis", "Giannis Antetokounmpo"], a: dirkNowitzki),
+        QuestionsModel(q: "Which Eastern conference team used to play in Western Conference", o: [K.miamiHeat, "Indiana Pacers", "Orlando Magic", "Milwaukee Bucks"], a: K.miamiHeat),
+        QuestionsModel(q: "Kobe Bryant made points in his last career game", o: ["55", "65", "48", K.kobeBryantPoints], a: K.kobeBryantPoints)
         ]
+    
+    // Segues
+    
+    static let goToQuestions = "goToQuestions"
+    static let goToResult = "goToResult"
+    static let goToMenu = "goToMenu"
 
         
     }
