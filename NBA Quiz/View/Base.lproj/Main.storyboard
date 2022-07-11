@@ -30,22 +30,30 @@
                                     <action selector="playButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rdL-9G-0wj"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PSu-rs-aar">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ete-wA-Ltc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ete-wA-Ltc" firstAttribute="trailing" secondItem="rSO-1Y-erJ" secondAttribute="trailing" id="1qf-EJ-JJz"/>
                             <constraint firstAttribute="bottom" secondItem="rSO-1Y-erJ" secondAttribute="bottom" id="1s2-Hr-FVf"/>
+                            <constraint firstItem="PSu-rs-aar" firstAttribute="trailing" secondItem="Ete-wA-Ltc" secondAttribute="trailing" id="26Q-ad-wOq"/>
                             <constraint firstItem="rSO-1Y-erJ" firstAttribute="leading" secondItem="Ete-wA-Ltc" secondAttribute="leading" id="4tz-kq-BO8"/>
                             <constraint firstItem="JBe-VP-ekO" firstAttribute="leading" secondItem="Ete-wA-Ltc" secondAttribute="leading" constant="100" id="5CS-pb-LVR"/>
                             <constraint firstItem="Ete-wA-Ltc" firstAttribute="bottom" secondItem="JBe-VP-ekO" secondAttribute="bottom" constant="120" id="97K-qh-tdM"/>
                             <constraint firstItem="JBe-VP-ekO" firstAttribute="centerX" secondItem="Ete-wA-Ltc" secondAttribute="centerX" id="DwF-wl-0bh"/>
                             <constraint firstItem="Ete-wA-Ltc" firstAttribute="trailing" secondItem="JBe-VP-ekO" secondAttribute="trailing" constant="100" id="bxo-Nn-eqh"/>
+                            <constraint firstItem="PSu-rs-aar" firstAttribute="leading" secondItem="Ete-wA-Ltc" secondAttribute="leading" id="dUy-45-3Om"/>
+                            <constraint firstItem="PSu-rs-aar" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rjE-MH-adL"/>
                             <constraint firstItem="rSO-1Y-erJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sbg-dl-1q9"/>
+                            <constraint firstItem="PSu-rs-aar" firstAttribute="bottom" secondItem="Ete-wA-Ltc" secondAttribute="bottom" id="yc6-6Y-7Ob"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cw8-qI-s2Q"/>
                     <connections>
+                        <outlet property="backgroundView" destination="PSu-rs-aar" id="fwh-cN-lkg"/>
                         <outlet property="playButton" destination="JBe-VP-ekO" id="89o-VI-8Xo"/>
                         <segue destination="LPz-8T-Ycb" kind="show" identifier="goToQuestions" id="JOj-M2-gwZ"/>
                     </connections>
@@ -266,7 +274,7 @@
                                     <color key="baseForegroundColor" red="0.050980389119999997" green="0.086274504660000001" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="O0L-3G-PBY"/>
+                                    <action selector="menuButtonPressed:" destination="7iP-dh-AdW" eventType="touchUpInside" id="zLf-Xc-eK2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxu-e8-qbV">
@@ -287,18 +295,25 @@
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5De-rW-S4B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zfM-VH-7PR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sa7-UC-ww3" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" constant="125" id="03t-e9-cBD"/>
+                            <constraint firstItem="5De-rW-S4B" firstAttribute="trailing" secondItem="zfM-VH-7PR" secondAttribute="trailing" id="4O9-sC-Cke"/>
                             <constraint firstItem="oxu-e8-qbV" firstAttribute="top" secondItem="zfM-VH-7PR" secondAttribute="top" constant="100" id="AAV-2P-YOk"/>
                             <constraint firstItem="jzg-Pk-89e" firstAttribute="top" secondItem="8gb-bm-VgS" secondAttribute="top" id="BTp-2k-jt1"/>
                             <constraint firstAttribute="bottom" secondItem="jzg-Pk-89e" secondAttribute="bottom" id="Cde-t4-3N2"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="jzg-Pk-89e" secondAttribute="trailing" id="HPV-iM-fXS"/>
                             <constraint firstItem="D3w-bl-KH9" firstAttribute="top" secondItem="oxu-e8-qbV" secondAttribute="bottom" constant="30" id="LK2-9N-MlT"/>
                             <constraint firstItem="oxu-e8-qbV" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" constant="100" id="Ogs-Hf-Num"/>
+                            <constraint firstItem="5De-rW-S4B" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" id="UP4-cl-6kO"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="sa7-UC-ww3" secondAttribute="trailing" constant="125" id="WxP-Ug-wTA"/>
+                            <constraint firstItem="5De-rW-S4B" firstAttribute="bottom" secondItem="8gb-bm-VgS" secondAttribute="bottom" id="bKm-Ee-nf7"/>
+                            <constraint firstItem="5De-rW-S4B" firstAttribute="top" secondItem="8gb-bm-VgS" secondAttribute="top" id="bgX-xA-l0M"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="D3w-bl-KH9" secondAttribute="trailing" constant="75" id="fRD-he-f4y"/>
                             <constraint firstItem="zfM-VH-7PR" firstAttribute="trailing" secondItem="oxu-e8-qbV" secondAttribute="trailing" constant="100" id="mix-7H-ryi"/>
                             <constraint firstItem="jzg-Pk-89e" firstAttribute="leading" secondItem="zfM-VH-7PR" secondAttribute="leading" id="nCT-Ah-g5L"/>
@@ -308,8 +323,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="JNI-1F-JlE"/>
                     <connections>
+                        <outlet property="backgroundView" destination="5De-rW-S4B" id="DHC-8b-6it"/>
                         <outlet property="menuButton" destination="sa7-UC-ww3" id="w8I-rX-JWC"/>
                         <outlet property="scoreNumberLabel" destination="oxu-e8-qbV" id="ugS-Bh-qxb"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToMenu" id="N2e-hO-zh4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf3-43-cxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -336,7 +353,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="O0L-3G-PBY"/>
+        <segue reference="JOj-M2-gwZ"/>
+        <segue reference="N2e-hO-zh4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
