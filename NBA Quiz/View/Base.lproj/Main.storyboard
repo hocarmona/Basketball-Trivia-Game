@@ -232,7 +232,14 @@
                             <constraint firstItem="3tw-zv-ycY" firstAttribute="trailing" secondItem="M0T-Pl-3NL" secondAttribute="trailing" constant="20" id="yE6-Ep-Kp6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oOs-8f-Xp9"/>
+                    <navigationItem key="navigationItem" id="oOs-8f-Xp9">
+                        <barButtonItem key="rightBarButtonItem" title="MENU" id="2ZB-uH-xVn">
+                            <color key="tintColor" systemColor="systemYellowColor"/>
+                            <connections>
+                                <action selector="menuButtonPressed:" destination="LPz-8T-Ycb" id="Bbj-eK-t9f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nextButton" destination="tvW-So-5N5" id="dfx-FK-iKX"/>
                         <outlet property="option1Button" destination="Xt9-ey-V52" id="L2T-gY-hu3"/>
@@ -245,6 +252,7 @@
                         <outlet property="questionLabel" destination="M0T-Pl-3NL" id="Lea-sr-VeG"/>
                         <outlet property="resultLabel" destination="UUb-K2-KKl" id="JeS-cg-O1t"/>
                         <segue destination="7iP-dh-AdW" kind="show" identifier="goToResult" id="wcL-gl-bm8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goBackToMenu" id="gjJ-xl-jUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xoT-p1-d3x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -353,8 +361,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JOj-M2-gwZ"/>
-        <segue reference="N2e-hO-zh4"/>
+        <segue reference="gjJ-xl-jUS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.87058818339999999" green="0.69803923369999998" blue="0.2352941036" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

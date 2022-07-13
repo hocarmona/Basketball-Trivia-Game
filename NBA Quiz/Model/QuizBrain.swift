@@ -59,4 +59,8 @@ struct QuizBrain {
             return false
         }
     }
+
+    mutating func clearUsedQuestions() {
+        arrayIndexUsed = []
+    }
 }

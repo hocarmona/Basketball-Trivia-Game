@@ -126,5 +126,23 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+        
+        let alert = UIAlertController(title: "Are you sure you wan to exit?", message: "", preferredStyle: .alert)
+        let actionExit = UIAlertAction(title: "Exit", style: .default) { (action) in
+            self.quizBrain.clearUsedQuestions()
+            self.performSegue(withIdentifier: K.goBackToMenu, sender: self)
+        }
+        
+        let actionCancel = UIAlertAction(title: "Cancel", style: .default) { (action) in
+            return
+        }
+        
+        alert.addAction(actionExit)
+        alert.addAction(actionCancel)
+        present(alert, animated: true)
+    }
+    
+    
 
 }

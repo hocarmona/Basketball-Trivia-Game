@@ -51,6 +51,6 @@ struct K {
     static let goToQuestions = "goToQuestions"
     static let goToResult = "goToResult"
     static let goToMenu = "goToMenu"
-
+    static let goBackToMenu = "goBackToMenu"
         
     }
