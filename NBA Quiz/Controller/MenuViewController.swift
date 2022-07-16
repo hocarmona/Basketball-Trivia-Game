@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftConfettiView
 
 class MenuViewController: UIViewController {
 
@@ -17,20 +16,13 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.setHidesBackButton(true, animated: false)
         playButton.layer.cornerRadius = 25
-        conffetiAnimation()
     }
 
     @IBAction func playButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToQuestions", sender: self)
         
     }
-    
-    func conffetiAnimation() {
-        let conffetiView = SwiftConfettiView(frame: self.view.bounds)
-        conffetiView.type = .image(UIImage(named: "bbback")!)
-        backgroundView.addSubview(conffetiView)
-        conffetiView.startConfetti()
-    }
+
     
 }
 

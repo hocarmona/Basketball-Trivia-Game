@@ -18,29 +18,18 @@ class ResultViewController: UIViewController {
     var confettiView = SwiftConfettiView()
     var correctAnswers: Int = 0
     var totalOfQuestions: Int = 0
-    var resultMessage: String {
-        switch correctAnswers {
-        case 0...totalOfQuestions/3:
-            return "Work harder next time"
-        case totalOfQuestions/3...2*totalOfQuestions/3:
-            return "Not bad"
-        case 2*totalOfQuestions/3..<totalOfQuestions:
-            return "Good job!"
-        case totalOfQuestions:
-            return "Perfect!!"
-        default:
-            return ""
-        }
-    }
+    var resultBrain = ResultBrain()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        resultBrain.totalOfQuestions = totalOfQuestions
+        resultBrain.correctAnswers = correctAnswers
         print("\(correctAnswers) / \(totalOfQuestions)")
         navigationItem.setHidesBackButton(true, animated: false)
         menuButton.layer.cornerRadius = 15
-        scoreNumberLabel.text = "\(correctAnswers)/\(totalOfQuestions)"
-        conffetiAnimation()
-        resultMessageLabel.text = resultMessage
+        scoreNumberLabel.text = "\(resultBrain.correctAnswers)/\(resultBrain.totalOfQuestions)"
+        resultMessageLabel.text = resultBrain.resultMessage
+        conffetiAnimation(typeConffeti: resultBrain.resultMessage)
 
     }
     
@@ -49,11 +38,17 @@ class ResultViewController: UIViewController {
         performSegue(withIdentifier: K.goToMenu, sender: self)
     }
     
-    func conffetiAnimation() {
+    func conffetiAnimation(typeConffeti: String) {
         let conffetiView = SwiftConfettiView(frame: self.view.bounds)
-        conffetiView.type = .confetti
+        let imageType: String = resultBrain.typeConffeti
+        if typeConffeti == K.perfect {
+            conffetiView.type = .confetti
+        } else if typeConffeti == K.goodJob {
+            conffetiView.type = .star
+        } else {
+            conffetiView.type = .image(UIImage(named: imageType)!)
+        }
         backgroundView.addSubview(conffetiView)
-        conffetiView.intensity = 0.90
         conffetiView.startConfetti()
     }
     

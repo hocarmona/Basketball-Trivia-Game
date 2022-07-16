@@ -21,8 +21,6 @@ struct QuizBrain {
         } else {
             arrayIndexUsed.append(newIndexNum)
             currentQuestion = newIndexNum
-            print(newIndexNum)
-            print(arrayIndexUsed)
             if counter >= 10 {
                 arrayIndexUsed = []
             }
