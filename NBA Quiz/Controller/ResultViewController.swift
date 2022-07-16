@@ -13,11 +13,25 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var scoreNumberLabel: UILabel!
     @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var backgroundView: UIImageView!
+    @IBOutlet weak var resultMessageLabel: UILabel!
     
-    
+    var confettiView = SwiftConfettiView()
     var correctAnswers: Int = 0
     var totalOfQuestions: Int = 0
-    var confettiView = SwiftConfettiView()
+    var resultMessage: String {
+        switch correctAnswers {
+        case 0...totalOfQuestions/3:
+            return "Work harder next time"
+        case totalOfQuestions/3...2*totalOfQuestions/3:
+            return "Not bad"
+        case 2*totalOfQuestions/3..<totalOfQuestions:
+            return "Good job!"
+        case totalOfQuestions:
+            return "Perfect!!"
+        default:
+            return ""
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +40,7 @@ class ResultViewController: UIViewController {
         menuButton.layer.cornerRadius = 15
         scoreNumberLabel.text = "\(correctAnswers)/\(totalOfQuestions)"
         conffetiAnimation()
+        resultMessageLabel.text = resultMessage
 
     }
     
